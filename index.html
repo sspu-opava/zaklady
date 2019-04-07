@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="cs">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Základy HTML 5</title>
-    <meta name="description" content="Přehled nejčastěji používaných značek jazyka HTML 5">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Přehled nejčastěji používaných značek jazyka HTML 5"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <h1>Základy jazyka HTML 5</h1>
-      <p id="podtitul">Nejčastěji používané značky a jejich význam</p>
-      <nav>
+    <div class="navbar">
+      <div class="dropdown">
+          <i class="fas fa-bars" style="font-size:32px"></i>
+      </div>
+      <nav class="container">
         <ul>
           <li><a href="#znacky">Značky</a></li>
           <li><a href="#seznamy">Seznamy</a></li>
@@ -19,8 +26,14 @@
           <li><a href="#nahrazovane-elementy">Nahrazované elementy</a></li>
         </ul>
       </nav>
+    </div>
+    <header>
+      <h1 class="text-center">Základy jazyka HTML 5</h1>
+      <p id="podtitul" class="text-center">
+        Nejčastěji používané značky a jejich význam
+      </p>
     </header>
-    <div id="obsah">
+    <div id="obsah" class="container">
       <main>
         <section id="znacky">
           <h2>Značky pro úpravu textu</h2>
@@ -53,11 +66,13 @@
             <abbr title="World Wide Web Consortium">W3C</abbr> je mezinárodní
             konsorcium, jehož členové společně s veřejností vyvíjejí webové
             standardy pro <abbr title="World Wide Web">WWW</abbr>. Cílem
-            konsorcia je <q>Rozvíjet World Wide Web do jeho plného potenciálu vývojem
-						protokolů a směrnic, které zajistí dlouhodobý růst webu</q>. 
-						Konsorciu předsedá jeho zakladatel <strong>Tim Berners-Lee</strong>, 
-						tvůrce služby WWW a primární autor specifikací 
-						<abbr title="Uniform Resource Locator">URL</abbr>,
+            konsorcia je
+            <q
+              >Rozvíjet World Wide Web do jeho plného potenciálu vývojem
+              protokolů a směrnic, které zajistí dlouhodobý růst webu</q
+            >. Konsorciu předsedá jeho zakladatel
+            <strong>Tim Berners-Lee</strong>, tvůrce služby WWW a primární autor
+            specifikací <abbr title="Uniform Resource Locator">URL</abbr>,
             <abbr title="HyperText Transfer Protocol">HTTP</abbr> a
             <abbr title="HyperText Markup Language">HTML</abbr> – základních
             pilířů webu.
@@ -103,7 +118,7 @@
           </blockquote>
           <h4>Programové kódy a výstupy</h4>
           <p>Příklad výpisu předformátovaného programového kódu:</p>
-      <pre>
+          <pre>
 			<code>
 			var i = 0;
 			while (i &lt; 10){
@@ -113,7 +128,7 @@
 			</code>
 			</pre>
           <p>Příklad výpisu výstupu z konzole:</p>
-      <pre>
+          <pre>
 			<samp>
 			Python 3.5.1 (v3.5.1:37a07cee5969, Dec  6 2015, 01:54:25) [MSC v.1900 64 bit (AMD64)] on win32
 			Type "help", "copyright", "credits" or "license" for more information.
@@ -336,7 +351,7 @@
               <figcaption>Tim Berners Lee - WWW</figcaption>
             </figure>
           </div>
-          <hr class="cistic" />
+          <hr class="cistic">
           <h3>Multimediální soubory</h3>
           <div class="multimedia">
             <figure>
@@ -349,7 +364,7 @@
                 Videoklip (.mp4 a .ogg) - Slavná reklama na Macintosh (1984)
               </figcaption>
             </figure>
-            <figure>
+            <figure id="audio">
               <audio controls="controls">
                 <source src="multimedia/sverepi-sakali.mp3" type="audio/mpeg" />
                 <source src="multimedia/sverepi-sakali.ogg" type="audio/ogg" />
@@ -391,5 +406,13 @@
         Opava 746 01
       </address>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('.dropdown').click(function(){
+          $('.navbar ul').toggle(500);
+        });
+      })
+    </script>
   </body>
 </html>
